@@ -133,4 +133,4 @@ with open("model_rf1.pkl", "wb") as f:
 with open("feature_order.json", "w", encoding="utf-8") as f:
     json.dump(list(X_train.columns), f, ensure_ascii=False, indent=2)
 
-print("✅ Guardats: model_rf.pkl i feature_order.json")
+print("Guardats: model_rf.pkl i feature_order.json")
