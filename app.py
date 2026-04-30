@@ -8,9 +8,15 @@ st.set_page_config(page_title="Vinils Predictor", layout="centered")
 
 st.title("🎵 Vinyl Price Prediction")
 
-# ---------- Cargar modelo ----------
-with open("model_rf1.pkl", "rb") as f:
-    model = pickle.load(f)
+# ---------- Cargar modelos ----------
+with open("model_rfA.pkl", "rb") as f:
+    model1 = pickle.load(f)
+
+with open("model_rfB.pkl", "rb") as f:
+    model2 = pickle.load(f)
+
+with open("model_rfC.pkl", "rb") as f:
+    model3 = pickle.load(f)
 
 # Si tienes feature_order.json
 with open("feature_order.json", "r", encoding="utf-8") as f:
@@ -57,5 +63,13 @@ X = pd.DataFrame([data])[FEATURE_ORDER]
 
 # ---------- Predicción ----------
 if st.button("💰 Predecir precio"):
-    y_pred = model.predict(X)[0]
-    st.success(f"Predicción: {y_pred:.2f} €")
+    pred1 = model1.predict(X)[0]
+    pred2 = model2.predict(X)[0]
+    pred3 = model3.predict(X)[0]
+    
+    st.success(f"**Model 1:** {pred1:.2f} €")
+    st.success(f"**Model 2:** {pred2:.2f} €")
+    st.success(f"**Model 3:** {pred3:.2f} €")
+    
+    promedio = (pred1 + pred2 + pred3) / 3
+    st.info(f"**Promedio dels 3 models:** {promedio:.2f} €")
