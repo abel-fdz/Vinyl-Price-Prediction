@@ -1,7 +1,5 @@
 # 🎵 Vinyl Price Predictor
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge.svg)](https://vinyl-price-prediction.streamlit.app)
-
 Aquest projecte utilitza Machine Learning per estimar el valor de mercat d'un disc de vinil a partir de les seves característiques tècniques i el seu estat de conservació. 
 
 D'un hobby com és col·leccionar vinils, n'ha sortit una eina útil per a col·leccionistes que volen saber quin és el preu real de la seva preuada col·lecció.
